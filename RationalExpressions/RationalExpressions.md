@@ -5,4 +5,7 @@ In the cybersecurity world, there are many important and useful skills to have. 
 
 
 ## Getting Started
-Before we begin, we will first need to look at the resources we are given. Within the provided zip file, we have three text files - instructions.txt (Figure 1.0), scrambled_logs.txt (Figure 1.1) and weak_entropy_logs.txt (Figure 1.2).
+Before we begin, we will first need to look at the resources we are given. Within the provided zip file, we have three text files - instructions.txt, weak_entropy_logs.txt (Figure 1.0) and scrambled_logs.txt (Figure 1.1). A quick look at instructions.txt essentially tells us that we need to find a valid URL within scrambled_logs.txt - to do that, we can create a regular expression that works with the discovered valid URLs in weak_entropy_logs.txt.
+
+Taking a quick look at weak_entropy_logs.txt
+![alt-text](https://github.com/0xETX/ISSessions-2021-CTF/blob/main/RationalExpressions/Images/weakentropy.PNG "weak_entropy_logs.txt")
