@@ -36,6 +36,7 @@ The first thing you may notice is that all the integers begin with 158100. Follo
 *Figure 2.1: **^\d{8}** would work perfectly fine too, along with other variations of length. As this is a timestamp, work with what the expected timeframe would be if in a real world scenario!*
 
 ^158100\d{4} is fairly straight forwards - the very beginning, ^, tells the regular expression to begin at the very start of each new line. Following that, 158100 matches explicitly with anything containing 158100. \d{4} has two parts to it - \d represents 'Any digit'. {4} restricts the digit match to explicity 4 of whatever is specified - in this case, digits. Here is a demonstration of it in action:
+
 ![alt-text](https://github.com/0xETX/ISSessions-2021-CTF/blob/main/RationalExpressions/Images/regexpart1.PNG "Testing part 1")
 
 *Figure 2.2: Demonstration of why and how it works.*
