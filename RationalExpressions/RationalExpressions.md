@@ -48,3 +48,22 @@ The first thing you may notice is that all the integers begin with 158100. Follo
   * 158100a000 does not match as it contains an alphabetical character, breaking the \d condition.
   * While 158100002 might not have any alphabetical or special characters, it does not meet the criteria of 4 digits past 158100.
   * As 1581002342 beings with 158100 and is followed by 4 numerical characters, it is a valid match.
+With that done, we can move onto the second part of the regular expression.
+
+### HTTP.REQUEST.URL
+The second section is the HTTP.REQUEST.URL. This part will be the longest section, due to the complexity of the URLs versus timestamps and methods.
+![alt-text](https://github.com/0xETX/ISSessions-2021-CTF/blob/main/RationalExpressions/Images/httpreq.PNG "Request URLS")
+
+*Figure 2.3: All request URLs from the weak entropy log.*
+
+We'll begin with the protocol section - as expected from the name, all of the URLs are using HTTP or HTTPS. In regex, we can turn this into **https?:**. The '?' character represents a possible match that is not required. Both HTTP and HTTPS contain 'HTTP', meaning that part will match without issue. By adding 's?', we can also include 'HTTPS' without excluding 'HTTP' for not ending with an 'S'.
+
+Moving onto the domain section, the first thing that stands out is that each URL begins with a single alphabetical character, followed by a period - resulting in **\w\.**. \w will match to a single alphabetical character, while \. will match to a single period - the backslash is required, as in regex a period will match *anything*. The escape character will ensure a period is strictly matched.
+
+Past that, we can see the second level domain. Observing these, we'll notice that they come in no particular order and contain both numbers and alphabetical characters, but no special characters. They are also not in any particular length. The resulting regex will be **[\w\d]\***. The square brackets surrounding \w and \d means that either within can be matched - in addition to that, the \* outside the square brackets means they can be of any length. For example:
+  * aaaaaaaaaaaaaaa will match.
+  * 00000000 will match.
+  * b5k2o3i4aeerer91230uwu will match.
+  * aaaaa&bbbbb will only match up to the final *a* as the *&* symbol cuts it off before the *b* section. While this may seem like a problem at first, the top-level domain section will ensure wrong strings like these do not match.
+
+Observing the top level domains, we'll notice that they come in a variety of ways. Some of these examples are .net, .game, .meme, .mom and so on. While it may seem like \w{3,4} (range of 3-4) would be a good idea, there is one problem - you'd be including top level domains that *don't exist*. Unlike second-level domains, top-level domains can't just be created with a couple of simple steps like a second-level domain. Top-level domains are managed by ICANN which is absolutely not worth the effort of any malicious actor. To keep it simple, we'll just match any top-level domain that has appeared in the sample data. Our resulting regular expression is **\.(net|moe|game|meme|mom|org|art|car|com|team)**. \. is to keep the period before the top-level domain. The circle brackets contain each top-level domain being used - the addition of the | character is essentially an 'or' statement. As long as one matches, it will be considered valid.
