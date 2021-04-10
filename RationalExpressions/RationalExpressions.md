@@ -19,3 +19,7 @@ The next file we'll look at is scrambled_logs.txt. Taking a brief look at this f
 *Figure 1.1: Observing the contents of the scrambled logs file*
 
 After looking through our pieces of evidence, we will begin with the weak_entropy_logs.txt file. For this challenge, I will mainly use https://regex101.com to build my expression, as it will continually update and provide feedback on errors, groups and matching strings.
+
+## Building the Regex
+
+![alt-text](https://github.com/0xETX/ISSessions-2021-CTF/blob/main/RationalExpressions/Images/regex101.PNG "🤔")
