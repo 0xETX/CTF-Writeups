@@ -37,6 +37,7 @@ The first thing you may notice is that all the integers begin with 158100. Follo
 
 ^158100\d{4} is fairly straight forwards - the very beginning, ^, tells the regular expression to begin at the very start of each new line. Following that, 158100 matches explicitly with anything containing 158100. \d{4} has two parts to it - \d represents 'Any digit'. {4} restricts the digit match to explicity 4 of whatever is specified - in this case, digits. Here is a demonstration of it in action:
 ![alt-text](https://github.com/0xETX/ISSessions-2021-CTF/blob/main/RationalExpressions/Images/regexpart1.PNG "Testing part 1")
+
 *Figure 2.2: Demonstration of why and how it works.*
 
 Despite the first line, 'Foo 1581005445 Bar', having a number that would match the criteria, it is eliminated solely for breaking the anchor (^) condition, where the line must start with the timestamp.
