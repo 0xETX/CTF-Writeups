@@ -41,7 +41,7 @@ The first thing you may notice is that all the integers begin with 158100. Follo
 
 *Figure 2.2: Demonstration of why and how it works.*
 
-..* Despite the first line, 'Foo 1581005445 Bar', having a number that would match the criteria, it is eliminated solely for breaking the anchor (^) condition, where the line must start with the timestamp.
-..* 158100a000 does not match as it contains an alphabetical character, breaking the \d condition.
-..* While 158100002 might not have any alphabetical or special characters, it does not meet the criteria of 4 digits past 158100.
-..* As 1581002342 beings with 158100 and is followed by 4 numerical characters, it is a valid match.
+  * Despite the first line, 'Foo 1581005445 Bar', having a number that would match the criteria, it is eliminated solely for breaking the anchor (^) condition, where the line must start with the timestamp.
+  * 158100a000 does not match as it contains an alphabetical character, breaking the \d condition.
+  * While 158100002 might not have any alphabetical or special characters, it does not meet the criteria of 4 digits past 158100.
+  * As 1581002342 beings with 158100 and is followed by 4 numerical characters, it is a valid match.
