@@ -1,1 +1,1 @@
-#Bell: Rational Expressions Are Also Regular Expressions
+# Bell: Rational Expressions Are Also Regular Expressions
