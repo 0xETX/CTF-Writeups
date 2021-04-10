@@ -16,6 +16,7 @@ Taking a quick look at weak_entropy_logs.txt shows that there are 10 URLs we can
 
 The next file we'll look at is scrambled_logs.txt. Taking a brief look at this file demonstrates how important having sample data like weak_entropy_logs.txt are - without out, the only way we could figure out which sites are valid is by figuring out if it could be a valid URL, which would still leave thousands of samples to go through.
 ![alt-text](https://github.com/0xETX/ISSessions-2021-CTF/blob/main/RationalExpressions/Images/scrambledlogs.PNG "scrambled_logs.txt")
+
 *Figure 1.1: Observing the contents of the scrambled logs file*
 
 After looking through our pieces of evidence, we will begin with the weak_entropy_logs.txt file. For this challenge, I will mainly use https://regex101.com to build my expression, as it will continually update and provide feedback on errors, groups and matching strings.
