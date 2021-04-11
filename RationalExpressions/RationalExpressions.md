@@ -78,8 +78,6 @@ The final part of the request URL is the file section. As standard, it begins wi
 
 ### REQUEST.METHOD
 Don't worry, you'll be spared my rambling for this one and you'll see why:
-![alt-text](https://github.com/0xETX/ISSessions-2021-CTF/blob/main/RationalExpressions/Images/lol.PNG, "lol")
-*Figure 2.5: Huh, that is pretty simple.*
 
 The only HTTP methods seen in the sample are POST and GET, so that's what we'll stricly look for. The resulting regex is **(POST|GET)**, which literally just looks for POST or GET.
 
@@ -97,3 +95,6 @@ Now, we'll paste the scrambled_logs.txt file into Regex101 along with the regula
 ![alt-text](https://github.com/0xETX/ISSessions-2021-CTF/blob/main/RationalExpressions/Images/woo.PNG "The correct URL is revealed!")
 *Figure 2.7: The malicious URL detected by RegEx*
 As seen in Figure 2.7, a single URL is displayed, just as we hoped! Following the instructions.txt, we now have our flag: **FLAG{ffec78f98d}**.
+
+## Final Comments
+As demonstrated above, RegEx is an immensely powerful tool that can quickly filter through colossal amounts of data to match *exactly* what you are looking for. By mastering your skill, you will notice considerable growth in what you are able do in terms of data analysis and even programming.
