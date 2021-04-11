@@ -94,6 +94,7 @@ Now, we'll paste the scrambled_logs.txt file into Regex101 along with the regula
 
 ![alt-text](https://github.com/0xETX/ISSessions-2021-CTF/blob/main/RationalExpressions/Images/woo.PNG "The correct URL is revealed!")
 *Figure 2.7: The malicious URL detected by RegEx*
+
 As seen in Figure 2.7, a single URL is displayed, just as we hoped! Following the instructions.txt, we now have our flag: **FLAG{ffec78f98d}**.
 
 ## Final Comments
