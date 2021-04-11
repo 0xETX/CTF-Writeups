@@ -98,4 +98,4 @@ Now, we'll paste the scrambled_logs.txt file into Regex101 along with the regula
 As seen in Figure 2.7, a single URL is displayed, just as we hoped! Following the instructions.txt, we now have our flag: **FLAG{ffec78f98d}**.
 
 ## Final Comments
-As demonstrated above, RegEx is an immensely powerful tool that can quickly filter through colossal amounts of data to match *exactly* what you are looking for. By mastering your skill, you will notice considerable growth in what you are able do in terms of data analysis and even programming.
+As demonstrated above, RegEx is an immensely powerful tool that can quickly filter through colossal amounts of data to match *exactly* what you are looking for. By mastering this skill, you will notice considerable growth in what you are able do in terms of data analysis and even programming.
