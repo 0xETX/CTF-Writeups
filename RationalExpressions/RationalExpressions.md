@@ -88,7 +88,7 @@ The only HTTP methods seen in the sample are POST and GET, so that's what we'll 
 ### RESULT
 Once we string the three seperate regular expressions together (with a space between each to follow the format of the document), our resulting regex is: 
 
-**^158100\d{4} https?:[aeiouy]\.[\w\d]{10,64}\.(net|moe|game|meme|mom|org|art|car|com|team)\/[a-f0-9]{10}\.html (POST|GET)**
+**^158100\d{4} https?:[aeiouy]\\.[\w\d]{10,64}\\.(net|moe|game|meme|mom|org|art|car|com|team)\\/[a-f0-9]{10}\\.html (POST|GET)**
 
 Now, we'll paste the scrambled_logs.txt file into Regex101 along with the regular expression and hope for the best!
 
