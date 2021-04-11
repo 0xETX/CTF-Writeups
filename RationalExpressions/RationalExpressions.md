@@ -52,18 +52,48 @@ With that done, we can move onto the second part of the regular expression.
 
 ### HTTP.REQUEST.URL
 The second section is the HTTP.REQUEST.URL. This part will be the longest section, due to the complexity of the URLs versus timestamps and methods.
+
 ![alt-text](https://github.com/0xETX/ISSessions-2021-CTF/blob/main/RationalExpressions/Images/httpreq.PNG "Request URLS")
 
 *Figure 2.3: All request URLs from the weak entropy log.*
 
-We'll begin with the protocol section - as expected from the name, all of the URLs are using HTTP or HTTPS. In regex, we can turn this into **https?:**. The '?' character represents a possible match that is not required. Both HTTP and HTTPS contain 'HTTP', meaning that part will match without issue. By adding 's?', we can also include 'HTTPS' without excluding 'HTTP' for not ending with an 'S'.
+We'll begin with the protocol section - as expected from the name, all of the URLs are using HTTP or HTTPS. In regex, we can turn this into '**https?:**'. The '?' character represents a possible match that is not required. Both HTTP and HTTPS contain 'HTTP', meaning that part will match without issue. By adding 's?', we can also include 'HTTPS' without excluding 'HTTP' for not ending with an 'S'.
 
-Moving onto the domain section, the first thing that stands out is that each URL begins with a single alphabetical character, followed by a period - resulting in **\w\.**. \w will match to a single alphabetical character, while \. will match to a single period - the backslash is required, as in regex a period will match *anything*. The escape character will ensure a period is strictly matched.
+Moving onto the domain section, the first thing that stands out is that each URL begins with a vowel or the letter 'y', followed by a period - resulting in **[aeiouy]\.**. \[aeiouy] will match any of the specified letters once, while \. will match to a single period - the backslash is required, as in regex a period will match *anything*. The escape character will ensure a period is strictly matched.
 
-Past that, we can see the second level domain. Observing these, we'll notice that they come in no particular order and contain both numbers and alphabetical characters, but no special characters. They are also not in any particular length. The resulting regex will be **[\w\d]\***. The square brackets surrounding \w and \d means that either within can be matched - in addition to that, the \* outside the square brackets means they can be of any length. For example:
-  * aaaaaaaaaaaaaaa will match.
-  * 00000000 will match.
+Past that, we can see the second level domain. Observing these, we'll notice that they come in no particular order and contain both numbers and alphabetical characters, but no special characters. The length of the second-level domains is also between 10 and 64 characters long. The resulting regex will be '**[\w\d]\{10,64}**'. The square brackets surrounding \w and \d means that either digits or letters (\w) can be matched. For example:
+  * aaaaaaaaaaaaaaaaaaaaaaa will match.
+  * 000000000000000 will match.
   * b5k2o3i4aeerer91230uwu will match.
-  * aaaaa&bbbbb will only match up to the final *a* as the *&* symbol cuts it off before the *b* section. While this may seem like a problem at first, the top-level domain section will ensure wrong strings like these do not match.
+  * aaaaaaaaaaaaaaa&bbbbbbbbbbbbbb will only match up to the final *a* as the *&* symbol cuts it off before the *b* section. While this may seem like a problem at first, the top-level domain section will ensure wrong strings like these do not match.
 
-Observing the top level domains, we'll notice that they come in a variety of ways. Some of these examples are .net, .game, .meme, .mom and so on. While it may seem like \w{3,4} (range of 3-4) would be a good idea, there is one problem - you'd be including top level domains that *don't exist*. Unlike second-level domains, top-level domains can't just be created with a couple of simple steps like a second-level domain. Top-level domains are managed by ICANN which is absolutely not worth the effort of any malicious actor. To keep it simple, we'll just match any top-level domain that has appeared in the sample data. Our resulting regular expression is **\.(net|moe|game|meme|mom|org|art|car|com|team)**. \. is to keep the period before the top-level domain. The circle brackets contain each top-level domain being used - the addition of the | character is essentially an 'or' statement. As long as one matches, it will be considered valid.
+Observing the top level domains, we'll notice that they come in a variety of ways. Some of these examples are .net, .game, .meme, .mom and so on. While it may seem like \w{3,4} (range of 3-4) would be a good idea, there is one problem - you'd be including top level domains that *don't exist*. Unlike second-level domains, top-level domains can't just be created with a couple of simple steps like a second-level domain. Top-level domains are managed by ICANN which is absolutely not worth the effort of any malicious actor. To keep it simple, we'll just match any top-level domain that has appeared in the sample data. Our resulting regular expression is '**\.(net|moe|game|meme|mom|org|art|car|com|team)**'. \\. is to keep the period before the top-level domain. The circle brackets contain each top-level domain being used - the addition of the | character is essentially an 'or' statement. As long as one matches, it will be considered valid.
+
+The final part of the request URL is the file section. As standard, it begins with '/'. Observing each file name, the most noticable thing is that they all end in .html. While not apparent at first, the names of the files seem to be a random assortment of numbers and letters - and while somewhat true, there is one thing to note - it follows a hex format, where numbers 0-9 are valid, but only letters from a-f are valid - you'll notice that not a single file name contains a letter between g-z. The size is also fixed at explicity 10 characters. The resulting regex will appear as so: **\/[a-f0-9]{10}\.html**.
+\\/ will ensure the special character '/' is stricly matched to a forward-slash (similar to .), \[a-f0-9]{10} will ensure only hex characters that are 10 characters in length are considered valid (- is used as a range, i.e: 0-9 is numbers from 0 to 9, and a-f is letters a to f.). Finally, \\.html will strictly look for .html.
+
+![alt-text](https://github.com/0xETX/ISSessions-2021-CTF/blob/main/RationalExpressions/Images/validrequest.PNG "Matching the proper URLs")
+
+*Figure 2.4: The resulting regular expression.*
+
+### REQUEST.METHOD
+Don't worry, you'll be spared my rambling for this one and you'll see why:
+![alt-text](https://github.com/0xETX/ISSessions-2021-CTF/blob/main/RationalExpressions/Images/lol.PNG, "lol")
+*Figure 2.5: Huh, that is pretty simple.*
+
+The only HTTP methods seen in the sample are POST and GET, so that's what we'll stricly look for. The resulting regex is **(POST|GET)**, which literally just looks for POST or GET.
+
+![alt-text](https://github.com/0xETX/ISSessions-2021-CTF/blob/main/RationalExpressions/Images/brainblast.PNG "Sometimes its nice to enjoy the simpler things in life.")
+
+*Figure 2.6: Easy peasy, lemon squeezy!*
+
+### RESULT
+Once we string the three seperate regular expressions together (with a space between each to follow the format of the document), our resulting regex is: 
+
+**^158100\d{4} https?:[aeiouy]\.[\w\d]{10,64}\.(net|moe|game|meme|mom|org|art|car|com|team)\/[a-f0-9]{10}\.html (POST|GET)**
+
+Now, we'll paste the scrambled_logs.txt file into Regex101 along with the regular expression and hope for the best!
+
+![alt-text](https://github.com/0xETX/ISSessions-2021-CTF/blob/main/RationalExpressions/Images/woo.PNG "The correct URL is revealed!")
+*Figure 2.7: The malicious URL detected by RegEx*
+As seen in Figure 2.7, a single URL is displayed, just as we hoped! Following the instructions.txt, we now have our flag: **FLAG{ffec78f98d}**.
