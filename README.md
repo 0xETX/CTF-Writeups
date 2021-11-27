@@ -1,2 +1,2 @@
-# ISSessions-2021-CTF
-Writeups from the ISSessions 2021 March CTF.
+# CTF-Writeups
+Writeups for CTF challenges I have completed in the past.
