@@ -12,7 +12,7 @@ addr=""
 port=0
 
 #Connecting to the server.
-#This code was followed through a YouTube tutorial
+#This code was followed through a YouTube tutorial - will update when I find the link.
 clientsocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 clientsocket.connect((addr, port))
 data = clientsocket.recv(1024)
