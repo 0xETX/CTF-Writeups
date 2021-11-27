@@ -11,12 +11,12 @@ In the cybersecurity world, there are many important and useful skills to have. 
 Before we begin, we will first need to look at the resources we are given. Within the provided zip file, we have three text files - instructions.txt, weak_entropy_logs.txt (Figure 1.0) and scrambled_logs.txt (Figure 1.1). A quick look at instructions.txt essentially tells us that we need to find a valid URL within scrambled_logs.txt - to do that, we can create a regular expression that works with the discovered valid URLs in weak_entropy_logs.txt.
 
 Taking a quick look at weak_entropy_logs.txt shows that there are 10 URLs we can work with in finding a valid RegEx. We will get back to this later for when we try to figure out the entropy.
-![alt-text](https://github.com/0xETX/ISSessions-2021-CTF/blob/main/RationalExpressions/Images/weakentropy.PNG "weak_entropy_logs.txt")
+![alt-text](https://github.com/0xETX/CTF-Writeups/blob/main/ISSessions%202021%20CTF/RationalExpressions/Images/weakentropy.PNG "weak_entropy_logs.txt")
 
 *Figure 1.0: Observing the contents of the weak entropy file*
 
 The next file we'll look at is scrambled_logs.txt. Taking a brief look at this file demonstrates how important having sample data like weak_entropy_logs.txt are - without out, the only way we could figure out which sites are valid is by figuring out if it could be a valid URL, which would still leave thousands of samples to go through.
-![alt-text](https://github.com/0xETX/ISSessions-2021-CTF/blob/main/RationalExpressions/Images/scrambledlogs.PNG "scrambled_logs.txt")
+![alt-text](https://github.com/0xETX/CTF-Writeups/blob/main/ISSessions%202021%20CTF/RationalExpressions/Images/scrambledlogs.PNG "scrambled_logs.txt")
 
 *Figure 1.1: Observing the contents of the scrambled logs file*
 
@@ -24,7 +24,7 @@ After looking through our pieces of evidence, we will begin with the weak_entrop
 
 ## Building the Regex
 We'll begin by plugging in all of the weak_entropy_logs URLs into the test string box of Regex101. Take a moment to see what they all have in common.
-![alt-text](https://github.com/0xETX/ISSessions-2021-CTF/blob/main/RationalExpressions/Images/regex101.PNG "🤔")
+![alt-text](https://github.com/0xETX/CTF-Writeups/blob/main/ISSessions%202021%20CTF/RationalExpressions/Images/regex101.PNG "🤔")
 
 *Figure 2.0: What do you notice about the URLs and their entropy?*
 
@@ -34,13 +34,13 @@ We'll begin with the first section. The times we are presented with are:
 
 The first thing you may notice is that all the integers begin with 158100. Following that, starting at 1581000000, it would appear all the timestamps increase by 1111. However, observing the final integer shows us that is not the case, as it ends with '1234' which is not divisble by 1111. As a result, there are no additional patterns involving how the numbers scale. Additionally, everything under TIME is also specifically a digit - there are no alphabetical or special characters. With this knowledge, we can create the first part of our regular expression: **^158100\d{4}**.
 
-![alt-text](https://github.com/0xETX/ISSessions-2021-CTF/blob/main/RationalExpressions/Images/1581.PNG "The first part of the regular expression.")
+![alt-text](https://github.com/0xETX/CTF-Writeups/blob/main/ISSessions%202021%20CTF/RationalExpressions/Images/1581.PNG "The first part of the regular expression.")
 
 *Figure 2.1: **^\d{8}** would work perfectly fine too, along with other variations of length. As this is a timestamp, work with what the expected timeframe would be if in a real world scenario!*
 
 **^158100\d{4}** is fairly straight forwards - the very beginning, ^, tells the regular expression to begin at the very start of each new line. Following that, 158100 matches explicitly with anything containing 158100. \d{4} has two parts to it - \d represents 'Any digit'. {4} restricts the digit match to explicity 4 of whatever is specified - in this case, digits. Here is a demonstration of it in action:
 
-![alt-text](https://github.com/0xETX/ISSessions-2021-CTF/blob/main/RationalExpressions/Images/regexpart1.PNG "Testing part 1")
+![alt-text](https://github.com/0xETX/CTF-Writeups/blob/main/ISSessions%202021%20CTF/RationalExpressions/Images/regexpart1.PNG "Testing part 1")
 
 *Figure 2.2: Demonstration of why and how it works.*
 
@@ -53,7 +53,7 @@ With that done, we can move onto the second part of the regular expression.
 ### HTTP.REQUEST.URL
 The second section is the HTTP.REQUEST.URL. This part will be the longest section, due to the complexity of the URLs versus timestamps and methods.
 
-![alt-text](https://github.com/0xETX/ISSessions-2021-CTF/blob/main/RationalExpressions/Images/httpreq.PNG "Request URLS")
+![alt-text](https://github.com/0xETX/CTF-Writeups/blob/main/ISSessions%202021%20CTF/RationalExpressions/Images/httpreq.PNG "Request URLS")
 
 *Figure 2.3: All request URLs from the weak entropy log.*
 
@@ -72,7 +72,7 @@ Observing the top level domains, we'll notice that they come in a variety of way
 The final part of the request URL is the file section. As standard, it begins with '/'. Observing each file name, the most noticable thing is that they all end in .html. While not apparent at first, the names of the files seem to be a random assortment of numbers and letters - and while somewhat true, there is one thing to note - it follows a hex format, where numbers 0-9 are valid, but only letters from a-f are valid - you'll notice that not a single file name contains a letter between g-z. The size is also fixed at explicity 10 characters. The resulting regex will appear as so: **\\/[a-f0-9]{10}\.html**.
 \\/ will ensure the special character '/' is stricly matched to a forward-slash (similar to .), \[a-f0-9]{10} will ensure only hex characters that are 10 characters in length are considered valid (- is used as a range, i.e: 0-9 is numbers from 0 to 9, and a-f is letters a to f.). Finally, \\.html will strictly look for .html.
 
-![alt-text](https://github.com/0xETX/ISSessions-2021-CTF/blob/main/RationalExpressions/Images/validrequest.PNG "Matching the proper URLs")
+![alt-text](https://github.com/0xETX/CTF-Writeups/blob/main/ISSessions%202021%20CTF/RationalExpressions/Images/validrequest.PNG "Matching the proper URLs")
 
 *Figure 2.4: The resulting regular expression.*
 
@@ -81,7 +81,7 @@ Don't worry, you'll be spared my rambling for this one and you'll see why:
 
 The only HTTP methods seen in the sample are POST and GET, so that's what we'll stricly look for. The resulting regex is **(POST|GET)**, which literally just looks for POST or GET.
 
-![alt-text](https://github.com/0xETX/ISSessions-2021-CTF/blob/main/RationalExpressions/Images/brainblast.PNG "Sometimes its nice to enjoy the simpler things in life.")
+![alt-text](https://github.com/0xETX/CTF-Writeups/blob/main/ISSessions%202021%20CTF/RationalExpressions/Images/brainblast.PNG "Sometimes its nice to enjoy the simpler things in life.")
 
 *Figure 2.6: Easy peasy, lemon squeezy!*
 
@@ -92,7 +92,7 @@ Once we string the three seperate regular expressions together (with a space bet
 
 Now, we'll paste the scrambled_logs.txt file into Regex101 along with the regular expression and hope for the best!
 
-![alt-text](https://github.com/0xETX/ISSessions-2021-CTF/blob/main/RationalExpressions/Images/woo.PNG "The correct URL is revealed!")
+![alt-text](https://github.com/0xETX/CTF-Writeups/blob/main/ISSessions%202021%20CTF/RationalExpressions/Images/woo.PNG "The correct URL is revealed!")
 *Figure 2.7: The malicious URL detected by RegEx*
 
 As seen in Figure 2.7, a single URL is displayed, just as we hoped! Following the instructions.txt, we now have our flag: **FLAG{ffec78f98d}**.
