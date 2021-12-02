@@ -6,7 +6,7 @@ Written by: 0xETX (0x03)
 2. Connecting: Telnet, netcat
 3. Programming: Python
 
-Insane Bolt is a programming challenge that was available during the HackTheBox Universities CTF 2021. This challenge has the user play a robot that has to follow a path of screws until they reach a diamond. The player accomplishes this by sending a string consisting for 'D' (for down), 'R' (for right) and 'L' (for left). The order of the characters in the string is the order the player will move. If the user goes into the wrong direction (a skull or fire emoji), they will lose and are forced to restart.
+Insane Bolt is a programming challenge that was available during the HackTheBox University CTF 2021. This challenge has the user play a robot that has to follow a path of screws until they reach a diamond. The player accomplishes this by sending a string consisting for 'D' (for down), 'R' (for right) and 'L' (for left). The order of the characters in the string is the order the player will move. If the user goes into the wrong direction (a skull or fire emoji), they will lose and are forced to restart.
 
 ## Getting Started
 Before starting the challenge, the first thing we must do is understand how the challenge works. To start this off, the first thing I will do is connect to the challenge using Telnet as seen in Figure 1.0. 
