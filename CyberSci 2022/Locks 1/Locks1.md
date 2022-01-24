@@ -17,7 +17,7 @@ After establishing our first connection, there are two things that I immediately
 1. One message is sent prior to the keypad (essentially a banner)
 2. The keypad itself
 
-![alt-text](https://github.com/0xETX/CTF-Writeups/blob/main/CTF-Writeups/CyberSci%202022/Locks%201/Images/socketOutput.png "Connecting to the socket.")
+![alt-text](https://github.com/0xETX/CTF-Writeups/blob/main/CyberSci%202022/Locks%201/Images/socketOutput.png "Connecting to the socket.")
 
 *Figure 1.0: Focusing on the format of the keypad.*
 
@@ -38,7 +38,7 @@ As usual with socket-based challenges, the very first part of the script will re
 
 In the image below, two libraries are being imported - **socket**, and the "sleep" function from the **time** library. The main library here is **socket**, which will allow the Python script to connect to the remote host.
 
-![alt-text](https://github.com/0xETX/CTF-Writeups/blob/main/CTF-Writeups/CyberSci%202022/Locks%201/Images/socketConnect.png "First part of the script.")
+![alt-text](https://github.com/0xETX/CTF-Writeups/blob/main/CyberSci%202022/Locks%201/Images/socketConnect.png "First part of the script.")
 
 *Figure 2.0: Setting up the socket client.*
 
@@ -48,7 +48,7 @@ The next part is to transform the string into something that will be a lot clean
 
 After turning the keypad message into a string, the script will then remove any text that is unimportant, such as text used for styling (i.e. "|", "+", "-"). This will include the "\*\*" characters - although "important", I've decided that the script will turn the text into a string with all unhit numbers into an array. For every number between 1-36 (all valid digits) that is not included in the array, must be scratched out. Using that knowledge, we can build an array of all used numbers.
 
-![alt-text](https://github.com/0xETX/CTF-Writeups/blob/main/CTF-Writeups/CyberSci%202022/Locks%201/Images/transformString.png "Cleaning the string.")
+![alt-text](https://github.com/0xETX/CTF-Writeups/blob/main/CyberSci%202022/Locks%201/Images/transformString.png "Cleaning the string.")
 
 *Figure 2.1: Cleaning up the string.*
 
@@ -58,19 +58,19 @@ After saving the number array, the process of finding all missing numbers can be
 
 Finally, using the sort() function, we can now have the password (in order) in our array.
 
-![alt-text](https://github.com/0xETX/CTF-Writeups/blob/main/CTF-Writeups/CyberSci%202022/Locks%201/Images/findingNumbers.png "Solving the password.")
+![alt-text](https://github.com/0xETX/CTF-Writeups/blob/main/CyberSci%202022/Locks%201/Images/findingNumbers.png "Solving the password.")
 
 *Figure 2.2: Solving the password.*
 
 To conclude the script, the final portion of script will run a loop that creates a string in the expected format (space seperated) and send it to the remote host.
 
-![alt-text](https://github.com/0xETX/CTF-Writeups/blob/main/CTF-Writeups/CyberSci%202022/Locks%201/Images/sendingString.png "Sending the completed password.")
+![alt-text](https://github.com/0xETX/CTF-Writeups/blob/main/CyberSci%202022/Locks%201/Images/sendingString.png "Sending the completed password.")
 
 *Figure 2.3: Formatting the final string and sending it to the host.*
 
 ## Final Result
 After running the script, we get our exepected output, the number of crates - 258067.
 
-![alt-text](https://github.com/0xETX/CTF-Writeups/blob/main/CTF-Writeups/CyberSci%202022/Locks%201/Images/result.png "Flag discovery.")
+![alt-text](https://github.com/0xETX/CTF-Writeups/blob/main/CyberSci%202022/Locks%201/Images/result.png "Flag discovery.")
 
 *Figure 3.0: The challenge has been completed!*
