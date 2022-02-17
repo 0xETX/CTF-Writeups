@@ -2,7 +2,7 @@
 Written by: 0xETX (0x03)
 
 ## Resources Used:
-1. Bluestacks
+1. BlueStacks
 2. Wireshark
 3. Curl
 
