@@ -37,7 +37,7 @@ After creating and logging into our newly registered account, we get a page that
 There is nothing else that the app seems to support functionaliy-wise, so I decided to take a look at my captured traffic.
 
 And the very first thing I see is the registration page - in cleartext, with the username and password blatantly visible. It seems simple in functionality, where the app uses a POST request with the username and password in body to the register.php page to create an account.
-![alt-text](https://github.com/0xETX/CTF-Writeups/blob/main/HackTheBox%20Challenges/Mobile/Manager/Images/5.png "Viewing the cleartext registration."
+![alt-text](https://github.com/0xETX/CTF-Writeups/blob/main/HackTheBox%20Challenges/Mobile/Manager/Images/5.png "Viewing the cleartext registration.")
 
 *Figure 2.3: Viewing the traffic in cleartext.*
 
@@ -69,11 +69,11 @@ After trying to log in with the new credentials, we find that it fortunately (un
 So, what do you do when you have the ability to change anyone's password without authentication? Obviously, go for an admin account!
 
 Using the same Curl command as before while changing the username to "admin", we see that it runs successfully once again.
-![alt-text](https://github.com/0xETX/CTF-Writeups/blob/main/HackTheBox%20Challenges/Mobile/Manager/Images/10.png "Changing the admin's password."
+![alt-text](https://github.com/0xETX/CTF-Writeups/blob/main/HackTheBox%20Challenges/Mobile/Manager/Images/10.png "Changing the admin's password.")
 
 *Figure 3.2: Changing the admin's password via Curl.*
 
 And as expected, using the new password "abc123", we are able to successfully infiltrate the admin account and receive our well deserved flag!
-![alt-text](https://github.com/0xETX/CTF-Writeups/blob/main/HackTheBox%20Challenges/Mobile/Manager/Images/11.png "Hijacking the admin's account."
+![alt-text](https://github.com/0xETX/CTF-Writeups/blob/main/HackTheBox%20Challenges/Mobile/Manager/Images/11.png "Hijacking the admin's account.")
 
 *Figure 3.3: Successfully logging into the administrator's account.*
