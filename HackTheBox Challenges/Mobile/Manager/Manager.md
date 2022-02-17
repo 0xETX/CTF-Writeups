@@ -42,6 +42,7 @@ And the very first thing I see is the registration page - in cleartext, with the
 *Figure 2.3: Viewing the traffic in cleartext.*
 
 Knowing that the registration is in cleartext, I decide to see if the same thing occurs with the password update page. So, I log back into the "a" account and change the password to "helloWorld!".
+
 ![alt-text](https://github.com/0xETX/CTF-Writeups/blob/main/HackTheBox%20Challenges/Mobile/Manager/Images/6.png "Updating the password.")
 
 *Figure 2.4: Updating "a"'s password.*
