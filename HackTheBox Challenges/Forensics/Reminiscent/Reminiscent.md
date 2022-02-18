@@ -11,7 +11,7 @@ Reminiscent is a medium-difficulty forensics challenge that involves a memory fi
 Before we begin, something to note is a text file we're given alongside the image file named "imageinfo.txt".
 
 Something to note about this text file is the presence of "Suggest Profile(s)", which is something Volatility uses when examining images to account for differences between operating systems. In the file we're given, we can see that our suggested profiles are for either a Windows 7 or Windows Server 2008 machine. Since we know it's from a recruiter's virtual PC, we'll be going with the Windows 7 SP1 profile.
-[!alt-text](https://github.com/0xETX/CTF-Writeups/blob/main/HackTheBox%20Challenges/Forensics/Reminiscent/Images/1.png "Suggested profile.")
+![alt-text](https://github.com/0xETX/CTF-Writeups/blob/main/HackTheBox%20Challenges/Forensics/Reminiscent/Images/1.png "Suggested profile.")
 
 *Figure 1.0: Viewing the suggested profile of our image.*
 
@@ -19,12 +19,12 @@ Something to note about this text file is the presence of "Suggest Profile(s)", 
 The first action I'll perform on the image with volatility is checking the processes using *pslist*. From here, I can make note of any notable processes that may be running, such as a strange .exe or .vba process.
 
 At first, the processes look pretty normal.
-[!alt-text](https://github.com/0xETX/CTF-Writeups/blob/main/HackTheBox%20Challenges/Forensics/Reminiscent/Images/2.png "Viewing pslist.")
+![alt-text](https://github.com/0xETX/CTF-Writeups/blob/main/HackTheBox%20Challenges/Forensics/Reminiscent/Images/2.png "Viewing pslist.")
 
 *Figure 2.0: Viewing processes with pslist.*
 
 However, at the bottom of the list, I take note of a couple of PowerShell processes running. This is because Windows doesn't have any PowerShell scripts it runs on its own. Considering this is also a recruiter's PC, it's unlikely they ran it on their own. The two most likely cases is that either a PowerShell script is running because of IT policy, or that the computer has been compromised. Considering the situation, the second option seems the most likely.
-[!alt-text](https://github.com/0xETX/CTF-Writeups/blob/main/HackTheBox%20Challenges/Forensics/Reminiscent/Images/3.png "Viewing the PowerShell processes.")
+![alt-text](https://github.com/0xETX/CTF-Writeups/blob/main/HackTheBox%20Challenges/Forensics/Reminiscent/Images/3.png "Viewing the PowerShell processes.")
 
 *Figure 2.1: Investigating the intriguing PowerShell process.*
 
