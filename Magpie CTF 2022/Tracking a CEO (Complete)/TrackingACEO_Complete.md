@@ -170,6 +170,53 @@ After clicking the hidden tweet button, we find a new tweet from a new account, 
 
 *Figure 3.4: Viewing the tweet from the new account.*
 
-Initally from viewing Fla6's account, the thing that stood out the most was that it was written in 
+Initally from viewing Fla6's account, the thing that stood out the most was that it was written in a foreign language. After translating his tweets, we discover something interesting: the account seems to have been made for us, the investigator.
+
+The account claims that they are worried about the company setting him as the fall guy, so they made this account as a trail to lead to the identity of Mae.
+![alt-text](https://github.com/0xETX/CTF-Writeups/blob/main/Magpie%20CTF%202022/Tracking%20a%20CEO%20(Complete)/Images/24.png, "The interesting tweet.")
+
+*Figure 3.5: Viewing the start of Myall's interesting tweets.*
+
+After viewing more, we have a very subtle hint to a future clue.
+
+In this tweet, we see Fla6 mention that the CEO "has Pretty Good Privacy". While this might seem like they're making a general comment on the CEO's privacy, the key is the capitalization. They've been consistent on their grammar up to this, so this stands out in particular.
+
+"Pretty Good Privacy" is actually an acronym for PGP. And this will be important when we view Fla6's hint.
+![alt-text](https://github.com/0xETX/CTF-Writeups/blob/main/Magpie%20CTF%202022/Tracking%20a%20CEO%20(Complete)/Images/31.png, "PGP Acronym.")
+
+*Figure 3.6: A discreet hint from Fla6.*
+
+As mentioned earlier, PGP is a hint to discovering more information and we see that especially true with a tweet with an 8-character hex.
+
+For PGP, 8-character hexes are actually used as key signatures. They are kept short to make it more readable for other people in casual settings. Knowing this, we can begin the next steps.
+![alt-text](https://github.com/0xETX/CTF-Writeups/blob/main/Magpie%20CTF%202022/Tracking%20a%20CEO%20(Complete)/Images/25.png, "Fla6's hint.")
+
+*Figure 3.7: The second part of Fla6's hint.*
+
+Using that hex, we can discover a new Gmail account from "OmniCEO" by using the PGP Global Directory. Now, we can continue re-investigating Mae.
+![alt-text](https://github.com/0xETX/CTF-Writeups/blob/main/Magpie%20CTF%202022/Tracking%20a%20CEO%20(Complete)/Images/26.png, "Hunting for Mae's gmail.")
+
+*Figure 3.8: Discovering Mae's gmail account with the PGP directory.*
+
+With a Gmail address, we can perform OSINT on her Google account.
+
+The main tool I use for Google OSINT is GHunt, where I can use her Gmail to find more details about her, or at least, this account.
+![alt-text](https://github.com/0xETX/CTF-Writeups/blob/main/Magpie%20CTF%202022/Tracking%20a%20CEO%20(Complete)/Images/27.png, "Using GHunt to find more about Mae.")
+
+*Figure 3.9: Getting started to use GHunt on the account.*
+
+After running GHunt, we find her name - Madelina Saharan!
+![alt-text](https://github.com/0xETX/CTF-Writeups/blob/main/Magpie%20CTF%202022/Tracking%20a%20CEO%20(Complete)/Images/28.png, "Discovering Madelina with GHunt.")
+
+*Figure 3.10: Discovering the CEO's name.*
+
+After re-using her name on the PGP Global Directory, we discover the flag and confirm this is indeed the CEO's name!
+![alt-text](https://github.com/0xETX/CTF-Writeups/blob/main/Magpie%20CTF%202022/Tracking%20a%20CEO%20(Complete)/Images/29.png, "Revealing Madelina.")
+
+*Figure 3.11: Obtaining the flag.*
+
+
+
+
 
 
