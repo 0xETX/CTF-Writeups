@@ -208,7 +208,7 @@ After viewing more, we have a very subtle hint to a future clue.
 
 In this tweet, we see Fla6 mention that the CEO "has Pretty Good Privacy". While this might seem like they're making a general comment on the CEO's privacy, the key is the capitalization. They've been consistent on their grammar up to this, so this stands out in particular.
 
-"Pretty Good Privacy" is actually an acronym for PGP. And this will be important when we view Fla6's hint.
+"Pretty Good Privacy" is actually an acronym for PGP. And this will be important when we view another one of Fla6's hints.
 
 ![alt-text](https://github.com/0xETX/CTF-Writeups/blob/main/Magpie%20CTF%202022/Tracking%20a%20CEO%20(Complete)/Images/31.png "PGP Acronym.")
 
