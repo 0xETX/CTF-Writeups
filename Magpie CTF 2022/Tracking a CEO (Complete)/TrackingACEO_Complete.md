@@ -142,7 +142,7 @@ After plugging the WAV file into the script, we get a string of "99586647". Init
 
 *Figure 2.2: Converting the dial tones into numbers.*
 
-One of the things with flip-phones is that mutliple button presses are required to get some specific characters. Seeing 9 and 6 being repeated in groups made me think that this was what was happening. As a result, they weren't numbers - rather, they were characters.
+One of the things with flip-phones is that multiple button presses are required to get some specific characters. Seeing 9 and 6 being repeated in groups made me think that this was what was happening. As a result, they weren't numbers - rather, they were characters.
 
 Looking up a keypad online, I grabbed notepad and tried to convert the numbers to characters. After finishing the conversion, I got the string "xjtngp".
 
