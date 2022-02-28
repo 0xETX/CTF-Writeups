@@ -104,7 +104,7 @@ After searching around for awhile, nothing in particular stands out, meaning tha
 
 One of the neatest things about WikiPedia is the ability to review Revision History!
 
-Revision History allows you to see all edits previously made on WikiPedia. Similar to GitHub history, this means that you may be able to find interesting information if you search enough.
+Revision History allows you to see all edits previously made on WikiPedia. Similar to GitHub history, this means that you may be able to find interesting information that is buried under revision history.
 
 ![alt-text](https://github.com/0xETX/CTF-Writeups/blob/main/Magpie%20CTF%202022/Tracking%20a%20CEO%20(Complete)/Images/12.png "Revision history.")
 
