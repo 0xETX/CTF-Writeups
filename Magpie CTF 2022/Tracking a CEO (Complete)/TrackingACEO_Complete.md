@@ -230,7 +230,7 @@ Using the uniqe identifier mentioned prior, discover a new Gmail account from "O
 
 With a Gmail address, we can perform OSINT on her Google account.
 
-The main tool I use for Google OSINT is GHunt, where I can use her Gmail to find more details about her, or at least, this account.
+The main tool I use for Google OSINT is GHunt, where I can supply her Gmail to find more details about her said account - potentially revealing information about her.
 
 ![alt-text](https://github.com/0xETX/CTF-Writeups/blob/main/Magpie%20CTF%202022/Tracking%20a%20CEO%20(Complete)/Images/27.png "Using GHunt to find more about Mae.")
 
