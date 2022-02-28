@@ -98,7 +98,7 @@ In order to confirm that the location we were given is the correct one, I decide
 
 The next step was to look up the city on WikiPedia.
 
-Immediately, nothing in particular stands out, meaning that I might have to look deeper.
+After searching around for awhile, nothing in particular stands out, meaning that I might have to look deeper.
 
 ![alt-text](https://github.com/0xETX/CTF-Writeups/blob/main/Magpie%20CTF%202022/Tracking%20a%20CEO%20(Complete)/Images/11.png "Mae's home city.")
 
