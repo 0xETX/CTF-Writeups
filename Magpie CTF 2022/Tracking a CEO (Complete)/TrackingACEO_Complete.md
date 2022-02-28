@@ -216,7 +216,7 @@ In this tweet, we see Fla6 mention that the CEO "has Pretty Good Privacy". While
 
 As mentioned earlier, PGP is a hint to discovering more information and we see that especially true with a tweet with an 8-character hex.
 
-For PGP, 8-character hexes are actually used as key signatures. They are kept short to make it more readable for other people in casual settings. Knowing this, we can begin the next steps.
+With the PGP theory, 8-character hexes would be consistent with that as they are actually used as unique identifier. Using the last 8 characters of a PGP key ID, they are kept short to make it more readable for other people in many settings. Knowing this, we have a new route for investigation.
 
 ![alt-text](https://github.com/0xETX/CTF-Writeups/blob/main/Magpie%20CTF%202022/Tracking%20a%20CEO%20(Complete)/Images/25.png "Fla6's hint.")
 
