@@ -160,7 +160,7 @@ After posting the new string into the Discord chat, it unlocked and we were then
 
 Once we unlocked Mae's Discord, our next steps were to use this information to discover Mae's identity.
 
-I decided to start looking through the Discord to find identifying information, such as names or addresses. Unfortunately, all the Discord member's were revealed to be using fake names similar to Mae's, and searches using Sherlock (or manually) also yielded nothing for them either. I decided to look further.
+I decided to start looking through the Discord to find identifying information, such as names or addresses. Unfortunately, all the Discord members were revealed to be using fake names just as how Mae was, and my searches using Sherlock (and manual searches) also yielded nothing for them either. I decided to look further.
 
 Eventually, I discovered an interesting string of text, where Mae talks about a fall guy of hers being arrested. Since the fall guy was arrested, we have a real person who was apart of Mae's operation available to begin searching. I decided to look further to find more about the fall guy.
 
