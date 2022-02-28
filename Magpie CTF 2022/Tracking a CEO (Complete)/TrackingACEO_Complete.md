@@ -76,7 +76,9 @@ To counter this, I download the Instagram image and used Pinetools to sharpen th
 
 After sharpening the image, we can start to clearly read the image!
 
-The first thing I tried to look up was the building name, "Оренда". After throwing it through Google Translate, I realized it translated to "Rent" in Ukrainian. Knowing that it was a Ukrainian name in Cyrillic, it gave a decent direction of where to search.
+The first thing I tried to look up was the building name, "Оренда". After throwing it through Google Translate, I realized it translated to "Rent" in Ukrainian. Knowing that it was a Ukrainian name in Cyrillic, it gave a good indication that it may be in Ukraine.
+
+Note that names of stores does not necessarily indicate location, as many ethnic centers in many places may use a foreign language different than that of the host country.
 
 ![alt-text](https://github.com/0xETX/CTF-Writeups/blob/main/Magpie%20CTF%202022/Tracking%20a%20CEO%20(Complete)/Images/8.png "Viewing the building.")
 
