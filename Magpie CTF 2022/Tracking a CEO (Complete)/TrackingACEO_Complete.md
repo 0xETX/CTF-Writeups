@@ -222,7 +222,7 @@ With the PGP theory, 8-character hexes would be consistent with that as they are
 
 *Figure 3.7: The second part of Fla6's hint.*
 
-Using that hex, we can discover a new Gmail account from "OmniCEO" by using the PGP Global Directory. Now, we can continue re-investigating Mae.
+Using the uniqe identifier mentioned prior, discover a new Gmail account from "OmniCEO" is discovered via the PGP Global Directory. Now with the trail leading back onto the direction of Mae's tracks, we can begin to look further into them.
 
 ![alt-text](https://github.com/0xETX/CTF-Writeups/blob/main/Magpie%20CTF%202022/Tracking%20a%20CEO%20(Complete)/Images/26.png "Hunting for Mae's gmail.")
 
