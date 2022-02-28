@@ -236,6 +236,8 @@ The main tool I use for Google OSINT is GHunt, where I can use her Gmail to find
 
 After running GHunt, we find her name - Madelina Saharan!
 
+Following what Fla6 said earlier about the CEO having PGP, I figured it's worth checking the PGP Directory once again.
+
 ![alt-text](https://github.com/0xETX/CTF-Writeups/blob/main/Magpie%20CTF%202022/Tracking%20a%20CEO%20(Complete)/Images/28.png "Discovering Madelina with GHunt.")
 
 *Figure 3.10: Discovering the CEO's name.*
