@@ -54,7 +54,7 @@ To do this as efficiently as possible, I use a Python tool called "Sherlock". By
 
 *Figure 1.4: Using Sherlock to discover Mae's instagram.*
 
-After using the supplied URL from Sherlock, we can observe Mae's profile. What immediately stands out are her 4 different posts.
+After using the supplied URL from Sherlock, we can observe Mae's profile. Something that immediately stands out are her 4 different posts.
 
 ![alt-text](https://github.com/0xETX/CTF-Writeups/blob/main/Magpie%20CTF%202022/Tracking%20a%20CEO%20(Complete)/Images/5.png "Mae's instagram.")
 
