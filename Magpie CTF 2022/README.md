@@ -6,5 +6,6 @@ Some notable accomplishments:
   - First Blood on "Compare and Contrast"
   - First Blood on "Tracking A CEO Part III"
   - First person to solve all of the OSINT category, and did so individually
+  - Won 1st Place on the Writeup contest for "Tracking a CEO (I-III)
 
 Looking forward to the next Magpie CTF!
