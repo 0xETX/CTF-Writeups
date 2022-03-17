@@ -1,5 +1,5 @@
 # CTF-Writeups
-Writeups for CTF challenges I have completed in the past. Contains different challenge catorgies such as Programming, Forensics, OSINT, Mobile and many, many more!
+Writeups for CTF challenges I have completed in the past. Contains different challenge categories such as Programming, Forensics, OSINT, Mobile and many, many more!
 
 ## Structure
 Each CTF challenge is seperated into folders by the CTF name. Each folder will contain a 'README.md' file that briefly talks about each CTF. In the same folder, there will also be more folders that are seperated by individual challenges.
