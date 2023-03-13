@@ -213,7 +213,7 @@ Something that is worth noting is that Trenton describes the time of the post as
 
 Using a bit of Google-Fu, I search "being human" "29 April - 22 May" using quotation marks. This makes Google strictly look for these terms, which will allow us to get more specific results.
 
-The first thing we discoverr is that it is apparently a theme for Photo event, that takes place in Melbourne. We're slowly getting somewhere!
+The first thing we discover is that it is apparently a theme for Photo event, that takes place in Melbourne. We're slowly getting somewhere!
 
 ![alt-text](https://github.com/0xETX/CTF-Writeups/blob/main/Magpie%20CTF%202023/Operation%20Doomsday%20(Complete)/Images/23.png "Discovering the location of the event.")
 
