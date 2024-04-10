@@ -11,3 +11,4 @@ Within these folders, there will be a file named '{challengeName}.md' that will 
 - Top 100 - HackTheBox University 2021 CTF
 - 1st - Magpie 2022 CTF (Writeup - Tracking A CEO I-III)
 - 3rd - Magpie 2023 CTF (Canadian Students Divison)
+- Top 3 - Magpie 2023 CTF (Writeup - Operation Doomsday (Complete))
